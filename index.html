@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodTruckIQ - NWA Food Truck Locations</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        
+        header {
+            background: #16213e;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #e94560;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e94560;
+        }
+        
+        .logo span {
+            color: #fff;
+        }
+        
+        .subtitle {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .container {
+            display: flex;
+            height: calc(100vh - 70px);
+        }
+        
+        .sidebar {
+            width: 350px;
+            background: #16213e;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+        
+        .city-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .city-header {
+            background: #0f3460;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .city-header:hover {
+            background: #1a4080;
+        }
+        
+        .city-name {
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .city-pop {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .location-card {
+            background: #0f3460;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            border-left: 3px solid #e94560;
+            transition: transform 0.2s;
+        }
+        
+        .location-card:hover {
+            transform: translateX(5px);
+            background: #1a4080;
+        }
+        
+        .location-card.selected {
+            border-left-color: #4ade80;
+            background: #1a4080;
+        }
+        
+        .location-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .location-type {
+            display: inline-block;
+            background: #e94560;
+            color: #fff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .location-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        .stat {
+            color: #aaa;
+        }
+        
+        .stat-value {
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .map-container {
+            flex: 1;
+        }
+        
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .marker-popup {
+            min-width: 200px;
+        }
+        
+        .popup-title {
+            font-weight: bold;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .popup-type {
+            display: inline-block;
+            background: #e94560;
+            color: #fff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .legend {
+            padding: 10px;
+            background: #16213e;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .legend h4 {
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.3rem;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+        
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: 40%;
+            }
+            .map-container {
+                height: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <div class="logo">FoodTruck<span>IQ</span></div>
+            <div class="subtitle">Find the best spots for your food truck in NWA</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div class="legend">
+                <h4>Traffic Legend</h4>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #ef4444;"></span> Very High
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #f97316;"></span> High
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #eab308;"></span> Medium
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #22c55e;"></span> Low
+                </div>
+            </div>
+            <div id="location-list"></div>
+        </div>
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Traffic colors
+        const trafficColors = {
+            'Very High': '#ef4444',
+            'High': '#f97316',
+            'Medium': '#eab308',
+            'Low': '#22c55e'
+        };
+        
+        // Initialize map centered on NWA
+        const map = L.map('map').setView([36.25, -94.15], 10);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        
+        // Load data
+        let locationsData;
+        
+        async function loadData() {
+            const response = await fetch('data/locations.json');
+            locationsData = await response.json();
+            renderSidebar();
+            addMarkers();
+        }
+        
+        function renderSidebar() {
+            const listContainer = document.getElementById('location-list');
+            listContainer.innerHTML = '';
+            
+            locationsData.cities.forEach(city => {
+                const citySection = document.createElement('div');
+                citySection.className = 'city-section';
+                
+                const cityHeader = document.createElement('div');
+                cityHeader.className = 'city-header';
+                cityHeader.innerHTML = `
+                    <div>
+                        <div class="city-name">${city.name}</div>
+                        <div class="city-pop">Pop: ${city.population.toLocaleString()}</div>
+                    </div>
+                `;
+                
+                citySection.appendChild(cityHeader);
+                
+                city.locations.forEach(loc => {
+                    const card = document.createElement('div');
+                    card.className = 'location-card';
+                    card.id = 'card-' + loc.id;
+                    card.innerHTML = `
+                        <div class="location-name">${loc.name}</div>
+                        <span class="location-type">${loc.type}</span>
+                        <div class="location-stats">
+                            <div class="stat">Traffic: <span class="stat-value">${loc.footTraffic}</span></div>
+                            <div class="stat">Competition: <span class="stat-value">${loc.competition}</span></div>
+                            <div class="stat">Peak: <span class="stat-value">${loc.peakHours}</span></div>
+                            <div class="stat">Parking: <span class="stat-value">${loc.parking}</span></div>
+                        </div>
+                    `;
+                    
+                    card.addEventListener('click', () => {
+                        selectLocation(loc.id);
+                        map.flyTo([loc.lat, loc.lng], 14);
+                    });
+                    
+                    citySection.appendChild(card);
+                });
+                
+                listContainer.appendChild(citySection);
+            });
+        }
+        
+        function addMarkers() {
+            locationsData.cities.forEach(city => {
+                city.locations.forEach(loc => {
+                    const color = trafficColors[loc.footTraffic] || '#888';
+                    
+                    const marker = L.circleMarker([loc.lat, loc.lng], {
+                        radius: 10,
+                        fillColor: color,
+                        color: '#fff',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    }).addTo(map);
+                    
+                    const popupContent = `
+                        <div class="marker-popup">
+                            <div class="popup-title">${loc.name}</div>
+                            <span class="popup-type">${loc.type}</span>
+                            <p><strong>Traffic:</strong> ${loc.footTraffic}</p>
+                            <p><strong>Peak Hours:</strong> ${loc.peakHours}</p>
+                            <p><strong>Competition:</strong> ${loc.competition}</p>
+                            <p><strong>Parking:</strong> ${loc.parking}</p>
+                            <p style="margin-top: 8px; font-size: 0.9em; color: #666;">${loc.notes}</p>
+                        </div>
+                    `;
+                    
+                    marker.bindPopup(popupContent);
+                    
+                    marker.on('click', () => {
+                        selectLocation(loc.id);
+                    });
+                });
+            });
+        }
+        
+        function selectLocation(id) {
+            document.querySelectorAll('.location-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            const card = document.getElementById('card-' + id);
+            if (card) {
+                card.classList.add('selected');
+            }
+        }
+        
+        loadData();
+    </script>
+</body>
+</html>

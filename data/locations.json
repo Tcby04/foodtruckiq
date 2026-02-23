@@ -1,0 +1,187 @@
+{
+  "cities": [
+    {
+      "name": "Fayetteville",
+      "population": 95700,
+      "description": "Largest city, University of Arkansas, downtown scene, liberal arts vibe",
+      "locations": [
+        {
+          "id": "fay-downtown",
+          "name": "Downtown Square / Dickson Street",
+          "type": "downtown",
+          "lat": 36.0626,
+          "lng": -94.1576,
+          "footTraffic": "High",
+          "peakHours": "11am-2pm, 6pm-10pm",
+          "competition": "Medium",
+          "parking": "Street parking, nearby lots",
+          "regulations": "TBD",
+          "notes": "College crowd, events often, popular nightlife"
+        },
+        {
+          "id": "fay-uofa",
+          "name": "University of Arkansas Campus",
+          "type": "campus",
+          "lat": 36.0685,
+          "lng": -94.1737,
+          "footTraffic": "Very High",
+          "peakHours": "11am-1pm",
+          "competition": "Low",
+          "parking": "Limited, must coordinate with university",
+          "regulations": "TBD",
+          "notes": "30k+ students, limited food options on weekends"
+        },
+        {
+          "id": "fay-gulley",
+          "name": "Gulley Park Area",
+          "type": "park",
+          "lat": 36.0891,
+          "lng": -94.1719,
+          "footTraffic": "Medium",
+          "peakHours": "Weekends, evenings",
+          "competition": "Low",
+          "parking": "Large lot",
+          "regulations": "TBD",
+          "notes": "Family area, weekend crowds"
+        }
+      ]
+    },
+    {
+      "name": "Bentonville",
+      "population": 60100,
+      "description": "Walmart HQ, Crystal Bridges Museum, rapidly growing",
+      "locations": [
+        {
+          "id": "ben-downtown",
+          "name": "Downtown Square",
+          "type": "downtown",
+          "lat": 36.3514,
+          "lng": -94.2088,
+          "footTraffic": "High",
+          "peakHours": "11am-2pm",
+          "competition": "Medium",
+          "parking": "Street + lot",
+          "regulations": "TBD",
+          "notes": "Corporate crowd, First Friday events"
+        },
+        {
+          "id": "ben-crystal",
+          "name": "Crystal Bridges / 8th Street",
+          "type": "arts",
+          "lat": 36.3529,
+          "lng": -94.2017,
+          "footTraffic": "High",
+          "peakHours": "10am-5pm",
+          "competition": "Low",
+          "parking": "Large museum lot",
+          "regulations": "TBD",
+          "notes": "Tourists, art lovers, cafe nearby"
+        },
+        {
+          "id": "ben-walmart",
+          "name": "Walmart HQ Area",
+          "type": "corporate",
+          "lat": 36.3257,
+          "lng": -94.2269,
+          "footTraffic": "Medium",
+          "peakHours": "11am-1pm",
+          "competition": "Low",
+          "parking": "Corporate lot",
+          "regulations": "TBD",
+          "notes": "Corporate employees, limited weekend traffic"
+        }
+      ]
+    },
+    {
+      "name": "Rogers",
+      "population": 70500,
+      "description": "Growing retail hub, The Promenade mall, family areas",
+      "locations": [
+        {
+          "id": "rog-downtown",
+          "name": "Downtown Rogers",
+          "type": "downtown",
+          "lat": 36.3320,
+          "lng": -94.1185,
+          "footTraffic": "Medium",
+          "peakHours": "Lunch, evenings",
+          "competition": "Medium",
+          "parking": "Street + lots",
+          "regulations": "TBD",
+          "notes": "Historic downtown, growing food scene"
+        },
+        {
+          "id": "rog-promenade",
+          "name": "The Promenade",
+          "type": "mall",
+          "lat": 36.3102,
+          "lng": -94.1547,
+          "footTraffic": "High",
+          "peakHours": "Evenings, weekends",
+          "competition": "High",
+          "parking": "Mall lot",
+          "regulations": "TBD",
+          "notes": "Shopping center, food court competition"
+        }
+      ]
+    },
+    {
+      "name": "Springdale",
+      "population": 81200,
+      "description": "2nd largest, diverse,制造业 hub",
+      "locations": [
+        {
+          "id": "spr-downtown",
+          "name": "Downtown Springdale",
+          "type": "downtown",
+          "lat": 36.1867,
+          "lng": -94.1288,
+          "footTraffic": "Medium",
+          "peakHours": "Lunch",
+          "competition": "Low",
+          "parking": "Street + lots",
+          "regulations": "TBD",
+          "notes": "Historic district, growing arts scene"
+        },
+        {
+          "id": "spr-shiloh",
+          "name": "Shiloh Square",
+          "type": "shopping",
+          "lat": 36.1863,
+          "lng": -94.1394,
+          "footTraffic": "Medium",
+          "peakHours": "Afternoons",
+          "competition": "Medium",
+          "parking": "Shopping center lot",
+          "regulations": "TBD",
+          "notes": "Grocery store anchor, residential area"
+        }
+      ]
+    },
+    {
+      "name": "Bella Vista",
+      "population": 30000,
+      "description": "Retirement community, resort-style, POA community",
+      "locations": [
+        {
+          "id": "bv-towncenter",
+          "name": "Town Center",
+          "type": "community",
+          "lat": 36.4623,
+          "lng": -94.2556,
+          "footTraffic": "Low-Medium",
+          "peakHours": "Mornings, weekdays",
+          "competition": "Low",
+          "parking": "Lots",
+          "regulations": "TBD",
+          "notes": "POA managed, primarily residential"
+        }
+      ]
+    }
+  ],
+  "dataNotes": {
+    "footTraffic": "High/Medium/Low/Very High",
+    "competition": "High/Medium/Low (number of existing food trucks + restaurants)",
+    "regulations": "TBD = To Be Determined - need to research city permit requirements"
+  }
+}
