@@ -7,11 +7,11 @@
       "locations": [
         {
           "id": "fay-lake",
-          "name": "Lake Fayetteville Food Truck Court",
+          "name": "Lake Fayetteville Food Truck Area",
           "category": "food_truck_court",
           "type": "court",
-          "lat": 36.0869,
-          "lng": -94.1658,
+          "lat": 36.1377,
+          "lng": -94.1436,
           "address": "4782 N College Ave",
           "footTraffic": "High",
           "peakHours": "Weekends, lunch & dinner",
@@ -19,7 +19,7 @@
           "parking": "Large lot",
           "regulations": "City permit",
           "rating": null,
-          "notes": "Dozen+ trucks, Filipino to Thai, BBQ to Italian/Mexican fusion"
+          "notes": "Multiple food trucks, near Lake Fayetteville"
         },
         {
           "id": "fay-514",
@@ -79,8 +79,8 @@
           "name": "8th Street Market",
           "category": "food_truck_court",
           "type": "market",
-          "lat": 36.3510,
-          "lng": -94.2091,
+          "lat": 36.3652,
+          "lng": -94.1999,
           "address": "801 SE 8th St",
           "footTraffic": "High",
           "peakHours": "Lunch, evenings",
@@ -132,9 +132,9 @@
           "name": "The Boardwalk Food Truck Court",
           "category": "food_truck_court",
           "type": "court",
-          "lat": 36.1867,
-          "lng": -94.1288,
-          "address": "Springdale, AR",
+          "lat": 36.1540,
+          "lng": -94.1180,
+          "address": "3445 S Old Missouri Rd",
           "footTraffic": "Very High",
           "peakHours": "Lunch, dinner, weekends",
           "competition": "Medium",
@@ -155,16 +155,16 @@
           "name": "Centerton Food Trucks Park",
           "category": "food_truck_court",
           "type": "court",
-          "lat": 36.3510,
-          "lng": -94.2781,
-          "address": "Centerton, AR",
+          "lat": 36.3587,
+          "lng": -94.2908,
+          "address": "700 W Centerton Blvd",
           "footTraffic": "Medium",
           "peakHours": "Lunch, dinner",
           "competition": "Low",
           "parking": "Lot",
           "regulations": "TBD",
           "rating": 4.6,
-          "notes": "Good quality food trucks and a good amount of covered seating"
+          "notes": "Good quality food trucks and a good amount of covered seating, playground for kids"
         }
       ]
     },
