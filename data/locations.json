@@ -8,10 +8,11 @@
         {
           "id": "fay-downtown",
           "name": "Downtown Square / Dickson Street",
+          "category": "potential",
           "type": "downtown",
           "lat": 36.0626,
           "lng": -94.1576,
-          "footTraffic": "High",
+          "footTraffic": "Very High",
           "peakHours": "11am-2pm, 6pm-10pm",
           "competition": "Medium",
           "parking": "Street parking, nearby lots",
@@ -21,6 +22,7 @@
         {
           "id": "fay-uofa",
           "name": "University of Arkansas Campus",
+          "category": "potential",
           "type": "campus",
           "lat": 36.0685,
           "lng": -94.1737,
@@ -34,6 +36,7 @@
         {
           "id": "fay-gulley",
           "name": "Gulley Park Area",
+          "category": "potential",
           "type": "park",
           "lat": 36.0891,
           "lng": -94.1719,
@@ -43,6 +46,34 @@
           "parking": "Large lot",
           "regulations": "TBD",
           "notes": "Family area, weekend crowds"
+        },
+        {
+          "id": "fay-modal",
+          "name": "The Modal (Food Truck Court)",
+          "category": "food_truck_court",
+          "type": "court",
+          "lat": 36.0622,
+          "lng": -94.1591,
+          "footTraffic": "High",
+          "peakHours": "Lunch, dinner",
+          "competition": "High",
+          "parking": "Dedicated lot",
+          "regulations": "Permit required",
+          "notes": "Designated food truck pod, multiple trucks daily"
+        },
+        {
+          "id": "fay-gillis",
+          "name": "Gillis Market",
+          "category": "existing",
+          "type": "market",
+          "lat": 36.0589,
+          "lng": -94.1642,
+          "footTraffic": "Medium",
+          "peakHours": "Weekends",
+          "competition": "Low",
+          "parking": "Lot",
+          "regulations": "TBD",
+          "notes": "Local market, food trucks sometimes set up"
         }
       ]
     },
@@ -54,6 +85,7 @@
         {
           "id": "ben-downtown",
           "name": "Downtown Square",
+          "category": "potential",
           "type": "downtown",
           "lat": 36.3514,
           "lng": -94.2088,
@@ -67,6 +99,7 @@
         {
           "id": "ben-crystal",
           "name": "Crystal Bridges / 8th Street",
+          "category": "potential",
           "type": "arts",
           "lat": 36.3529,
           "lng": -94.2017,
@@ -80,6 +113,7 @@
         {
           "id": "ben-walmart",
           "name": "Walmart HQ Area",
+          "category": "potential",
           "type": "corporate",
           "lat": 36.3257,
           "lng": -94.2269,
@@ -89,6 +123,20 @@
           "parking": "Corporate lot",
           "regulations": "TBD",
           "notes": "Corporate employees, limited weekend traffic"
+        },
+        {
+          "id": "ben-depot",
+          "name": "The Depot (Food Truck Court)",
+          "category": "food_truck_court",
+          "type": "court",
+          "lat": 36.3510,
+          "lng": -94.2091,
+          "footTraffic": "High",
+          "peakHours": "Lunch, evenings",
+          "competition": "Medium",
+          "parking": "Lot available",
+          "regulations": "Permit through city",
+          "notes": "Designated food truck area downtown"
         }
       ]
     },
@@ -100,6 +148,7 @@
         {
           "id": "rog-downtown",
           "name": "Downtown Rogers",
+          "category": "potential",
           "type": "downtown",
           "lat": 36.3320,
           "lng": -94.1185,
@@ -113,6 +162,7 @@
         {
           "id": "rog-promenade",
           "name": "The Promenade",
+          "category": "potential",
           "type": "mall",
           "lat": 36.3102,
           "lng": -94.1547,
@@ -122,17 +172,32 @@
           "parking": "Mall lot",
           "regulations": "TBD",
           "notes": "Shopping center, food court competition"
+        },
+        {
+          "id": "rog-aurora",
+          "name": "Aurora Fields",
+          "category": "food_truck_court",
+          "type": "court",
+          "lat": 36.3185,
+          "lng": -94.1350,
+          "footTraffic": "Medium",
+          "peakHours": "Dinner, weekends",
+          "competition": "Low",
+          "parking": "Large lot",
+          "regulations": "TBD",
+          "notes": "New development, food trucks welcome"
         }
       ]
     },
     {
       "name": "Springdale",
       "population": 81200,
-      "description": "2nd largest, diverse,制造业 hub",
+      "description": "2nd largest, diverse, manufacturing hub",
       "locations": [
         {
           "id": "spr-downtown",
           "name": "Downtown Springdale",
+          "category": "potential",
           "type": "downtown",
           "lat": 36.1867,
           "lng": -94.1288,
@@ -146,6 +211,7 @@
         {
           "id": "spr-shiloh",
           "name": "Shiloh Square",
+          "category": "potential",
           "type": "shopping",
           "lat": 36.1863,
           "lng": -94.1394,
@@ -166,6 +232,7 @@
         {
           "id": "bv-towncenter",
           "name": "Town Center",
+          "category": "potential",
           "type": "community",
           "lat": 36.4623,
           "lng": -94.2556,
@@ -179,8 +246,25 @@
       ]
     }
   ],
+  "categories": {
+    "potential": "Potential locations to target",
+    "food_truck_court": "Designated food truck courts/pods",
+    "existing": "Existing spots where trucks already go"
+  },
+  "types": {
+    "downtown": "Downtown area",
+    "campus": "University/campus",
+    "park": "Park/recreational area",
+    "court": "Food truck court/pod",
+    "arts": "Museum/arts district",
+    "corporate": "Corporate/business park",
+    "mall": "Mall/shopping center",
+    "shopping": "Shopping area",
+    "community": "Community center",
+    "market": "Market/fairground"
+  },
   "dataNotes": {
-    "footTraffic": "High/Medium/Low/Very High",
+    "footTraffic": "Very High/High/Medium/Low",
     "competition": "High/Medium/Low (number of existing food trucks + restaurants)",
     "regulations": "TBD = To Be Determined - need to research city permit requirements"
   }

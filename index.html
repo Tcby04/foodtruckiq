@@ -218,18 +218,15 @@
     <div class="container">
         <div class="sidebar">
             <div class="legend">
-                <h4>Traffic Legend</h4>
+                <h4>Location Types</h4>
                 <div class="legend-item">
-                    <span class="legend-color" style="background: #ef4444;"></span> Very High
+                    <span class="legend-color" style="background: #22c55e;"></span> Food Truck Courts
                 </div>
                 <div class="legend-item">
-                    <span class="legend-color" style="background: #f97316;"></span> High
+                    <span class="legend-color" style="background: #f97316;"></span> Existing Spots
                 </div>
                 <div class="legend-item">
-                    <span class="legend-color" style="background: #eab308;"></span> Medium
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color" style="background: #22c55e;"></span> Low
+                    <span class="legend-color" style="background: #3b82f6;"></span> Potential Locations
                 </div>
             </div>
             <div id="location-list"></div>
@@ -241,6 +238,13 @@
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
+        // Category colors
+        const categoryColors = {
+            'potential': '#3b82f6',    // Blue
+            'food_truck_court': '#22c55e', // Green
+            'existing': '#f97316'      // Orange
+        };
+        
         // Traffic colors
         const trafficColors = {
             'Very High': '#ef4444',
@@ -291,7 +295,7 @@
                     card.id = 'card-' + loc.id;
                     card.innerHTML = `
                         <div class="location-name">${loc.name}</div>
-                        <span class="location-type">${loc.type}</span>
+                        <span class="location-type">${loc.category.replace('_', ' ')}</span>
                         <div class="location-stats">
                             <div class="stat">Traffic: <span class="stat-value">${loc.footTraffic}</span></div>
                             <div class="stat">Competition: <span class="stat-value">${loc.competition}</span></div>
@@ -315,7 +319,7 @@
         function addMarkers() {
             locationsData.cities.forEach(city => {
                 city.locations.forEach(loc => {
-                    const color = trafficColors[loc.footTraffic] || '#888';
+                    const color = categoryColors[loc.category] || '#888';
                     
                     const marker = L.circleMarker([loc.lat, loc.lng], {
                         radius: 10,
