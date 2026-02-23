@@ -120,6 +120,17 @@
             margin-bottom: 0.5rem;
         }
         
+        .rating {
+            display: inline-block;
+            background: #fbbf24;
+            color: #000;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
         .location-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -164,6 +175,17 @@
             font-size: 0.7rem;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
+        }
+        
+        .popup-rating {
+            display: inline-block;
+            background: #fbbf24;
+            color: #000;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
         }
         
         .legend {
@@ -295,6 +317,7 @@
                     card.id = 'card-' + loc.id;
                     card.innerHTML = `
                         <div class="location-name">${loc.name}</div>
+                        ${loc.rating ? '<span class="rating">⭐ ' + loc.rating + '</span>' : ''}
                         <span class="location-type">${loc.category.replace('_', ' ')}</span>
                         <div class="location-stats">
                             <div class="stat">Traffic: <span class="stat-value">${loc.footTraffic}</span></div>
@@ -333,7 +356,9 @@
                     const popupContent = `
                         <div class="marker-popup">
                             <div class="popup-title">${loc.name}</div>
-                            <span class="popup-type">${loc.type}</span>
+                            ${loc.rating ? '<span class="popup-rating">⭐ ' + loc.rating + '</span>' : ''}
+                            <span class="popup-type">${loc.category.replace('_', ' ')}</span>
+                            ${loc.address ? '<p><strong>Address:</strong> ' + loc.address + '</p>' : ''}
                             <p><strong>Traffic:</strong> ${loc.footTraffic}</p>
                             <p><strong>Peak Hours:</strong> ${loc.peakHours}</p>
                             <p><strong>Competition:</strong> ${loc.competition}</p>

@@ -3,8 +3,40 @@
     {
       "name": "Fayetteville",
       "population": 95700,
-      "description": "Largest city, University of Arkansas, downtown scene, liberal arts vibe",
+      "description": "Largest city, University of Arkansas, downtown scene",
       "locations": [
+        {
+          "id": "fay-lake",
+          "name": "Lake Fayetteville Food Truck Court",
+          "category": "food_truck_court",
+          "type": "court",
+          "lat": 36.0869,
+          "lng": -94.1658,
+          "address": "4782 N College Ave",
+          "footTraffic": "High",
+          "peakHours": "Weekends, lunch & dinner",
+          "competition": "Medium",
+          "parking": "Large lot",
+          "regulations": "City permit",
+          "rating": null,
+          "notes": "Dozen+ trucks, Filipino to Thai, BBQ to Italian/Mexican fusion"
+        },
+        {
+          "id": "fay-514",
+          "name": "The 514 Filling Station",
+          "category": "food_truck_court",
+          "type": "court",
+          "lat": 36.0589,
+          "lng": -94.1642,
+          "address": "514 M.L.K. Jr Blvd",
+          "footTraffic": "Medium",
+          "peakHours": "Lunch, dinner",
+          "competition": "Low",
+          "parking": "Lot",
+          "regulations": "City permit",
+          "rating": 5.0,
+          "notes": "Newly opened, nice space to enjoy a great meal"
+        },
         {
           "id": "fay-downtown",
           "name": "Downtown Square / Dickson Street",
@@ -17,6 +49,7 @@
           "competition": "Medium",
           "parking": "Street parking, nearby lots",
           "regulations": "TBD",
+          "rating": null,
           "notes": "College crowd, events often, popular nightlife"
         },
         {
@@ -31,49 +64,8 @@
           "competition": "Low",
           "parking": "Limited, must coordinate with university",
           "regulations": "TBD",
+          "rating": null,
           "notes": "30k+ students, limited food options on weekends"
-        },
-        {
-          "id": "fay-gulley",
-          "name": "Gulley Park Area",
-          "category": "potential",
-          "type": "park",
-          "lat": 36.0891,
-          "lng": -94.1719,
-          "footTraffic": "Medium",
-          "peakHours": "Weekends, evenings",
-          "competition": "Low",
-          "parking": "Large lot",
-          "regulations": "TBD",
-          "notes": "Family area, weekend crowds"
-        },
-        {
-          "id": "fay-modal",
-          "name": "The Modal (Food Truck Court)",
-          "category": "food_truck_court",
-          "type": "court",
-          "lat": 36.0622,
-          "lng": -94.1591,
-          "footTraffic": "High",
-          "peakHours": "Lunch, dinner",
-          "competition": "High",
-          "parking": "Dedicated lot",
-          "regulations": "Permit required",
-          "notes": "Designated food truck pod, multiple trucks daily"
-        },
-        {
-          "id": "fay-gillis",
-          "name": "Gillis Market",
-          "category": "existing",
-          "type": "market",
-          "lat": 36.0589,
-          "lng": -94.1642,
-          "footTraffic": "Medium",
-          "peakHours": "Weekends",
-          "competition": "Low",
-          "parking": "Lot",
-          "regulations": "TBD",
-          "notes": "Local market, food trucks sometimes set up"
         }
       ]
     },
@@ -83,9 +75,25 @@
       "description": "Walmart HQ, Crystal Bridges Museum, rapidly growing",
       "locations": [
         {
+          "id": "ben-8thstreet",
+          "name": "8th Street Market",
+          "category": "food_truck_court",
+          "type": "market",
+          "lat": 36.3510,
+          "lng": -94.2091,
+          "address": "801 SE 8th St",
+          "footTraffic": "High",
+          "peakHours": "Lunch, evenings",
+          "competition": "Medium",
+          "parking": "Lot available",
+          "regulations": "Through Downtown Bentonville Inc.",
+          "rating": 4.7,
+          "notes": "Shops, restaurants, and food trucks. Nice hip place, younger crowd"
+        },
+        {
           "id": "ben-downtown",
-          "name": "Downtown Square",
-          "category": "potential",
+          "name": "Downtown Bentonville",
+          "category": "existing",
           "type": "downtown",
           "lat": 36.3514,
           "lng": -94.2088,
@@ -94,7 +102,8 @@
           "competition": "Medium",
           "parking": "Street + lot",
           "regulations": "TBD",
-          "notes": "Corporate crowd, First Friday events"
+          "rating": null,
+          "notes": "Multiple truck locations: The Fire Truck (405 SW A St), Priato Pizzeria (1004 SE 5th St), The Witching Hour (704 SW A St), Yeyo's (122 W Central Ave)"
         },
         {
           "id": "ben-crystal",
@@ -108,35 +117,54 @@
           "competition": "Low",
           "parking": "Large museum lot",
           "regulations": "TBD",
+          "rating": null,
           "notes": "Tourists, art lovers, cafe nearby"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Springdale",
+      "population": 81200,
+      "description": "2nd largest, diverse, manufacturing hub",
+      "locations": [
         {
-          "id": "ben-walmart",
-          "name": "Walmart HQ Area",
-          "category": "potential",
-          "type": "corporate",
-          "lat": 36.3257,
-          "lng": -94.2269,
-          "footTraffic": "Medium",
-          "peakHours": "11am-1pm",
-          "competition": "Low",
-          "parking": "Corporate lot",
-          "regulations": "TBD",
-          "notes": "Corporate employees, limited weekend traffic"
-        },
+          "id": "spr-boardwalk",
+          "name": "The Boardwalk Food Truck Court",
+          "category": "food_truck_court",
+          "type": "court",
+          "lat": 36.1867,
+          "lng": -94.1288,
+          "address": "Springdale, AR",
+          "footTraffic": "Very High",
+          "peakHours": "Lunch, dinner, weekends",
+          "competition": "Medium",
+          "parking": "Large lot",
+          "regulations": "City permit",
+          "rating": 4.6,
+          "notes": "Best of NWA Food Truck Park - GOLD Award 3 years running. 11 individual food vendors, beer stand, live events"
+        }
+      ]
+    },
+    {
+      "name": "Centerton",
+      "population": 16000,
+      "description": "Growing suburb, near Bentonville",
+      "locations": [
         {
-          "id": "ben-depot",
-          "name": "The Depot (Food Truck Court)",
+          "id": "centerton-park",
+          "name": "Centerton Food Trucks Park",
           "category": "food_truck_court",
           "type": "court",
           "lat": 36.3510,
-          "lng": -94.2091,
-          "footTraffic": "High",
-          "peakHours": "Lunch, evenings",
-          "competition": "Medium",
-          "parking": "Lot available",
-          "regulations": "Permit through city",
-          "notes": "Designated food truck area downtown"
+          "lng": -94.2781,
+          "address": "Centerton, AR",
+          "footTraffic": "Medium",
+          "peakHours": "Lunch, dinner",
+          "competition": "Low",
+          "parking": "Lot",
+          "regulations": "TBD",
+          "rating": 4.6,
+          "notes": "Good quality food trucks and a good amount of covered seating"
         }
       ]
     },
@@ -157,6 +185,7 @@
           "competition": "Medium",
           "parking": "Street + lots",
           "regulations": "TBD",
+          "rating": null,
           "notes": "Historic downtown, growing food scene"
         },
         {
@@ -171,56 +200,8 @@
           "competition": "High",
           "parking": "Mall lot",
           "regulations": "TBD",
+          "rating": null,
           "notes": "Shopping center, food court competition"
-        },
-        {
-          "id": "rog-aurora",
-          "name": "Aurora Fields",
-          "category": "food_truck_court",
-          "type": "court",
-          "lat": 36.3185,
-          "lng": -94.1350,
-          "footTraffic": "Medium",
-          "peakHours": "Dinner, weekends",
-          "competition": "Low",
-          "parking": "Large lot",
-          "regulations": "TBD",
-          "notes": "New development, food trucks welcome"
-        }
-      ]
-    },
-    {
-      "name": "Springdale",
-      "population": 81200,
-      "description": "2nd largest, diverse, manufacturing hub",
-      "locations": [
-        {
-          "id": "spr-downtown",
-          "name": "Downtown Springdale",
-          "category": "potential",
-          "type": "downtown",
-          "lat": 36.1867,
-          "lng": -94.1288,
-          "footTraffic": "Medium",
-          "peakHours": "Lunch",
-          "competition": "Low",
-          "parking": "Street + lots",
-          "regulations": "TBD",
-          "notes": "Historic district, growing arts scene"
-        },
-        {
-          "id": "spr-shiloh",
-          "name": "Shiloh Square",
-          "category": "potential",
-          "type": "shopping",
-          "lat": 36.1863,
-          "lng": -94.1394,
-          "footTraffic": "Medium",
-          "peakHours": "Afternoons",
-          "competition": "Medium",
-          "parking": "Shopping center lot",
-          "regulations": "TBD",
-          "notes": "Grocery store anchor, residential area"
         }
       ]
     },
@@ -241,6 +222,7 @@
           "competition": "Low",
           "parking": "Lots",
           "regulations": "TBD",
+          "rating": null,
           "notes": "POA managed, primarily residential"
         }
       ]
@@ -251,19 +233,8 @@
     "food_truck_court": "Designated food truck courts/pods",
     "existing": "Existing spots where trucks already go"
   },
-  "types": {
-    "downtown": "Downtown area",
-    "campus": "University/campus",
-    "park": "Park/recreational area",
-    "court": "Food truck court/pod",
-    "arts": "Museum/arts district",
-    "corporate": "Corporate/business park",
-    "mall": "Mall/shopping center",
-    "shopping": "Shopping area",
-    "community": "Community center",
-    "market": "Market/fairground"
-  },
   "dataNotes": {
+    "rating": "Star rating from Google/Yelp (where available)",
     "footTraffic": "Very High/High/Medium/Low",
     "competition": "High/Medium/Low (number of existing food trucks + restaurants)",
     "regulations": "TBD = To Be Determined - need to research city permit requirements"
