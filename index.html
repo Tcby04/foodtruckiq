@@ -398,21 +398,24 @@
     </script>
     
     <script>
-    // Check for upgrade success
+    // Check for upgrade success - auto-unlock Pro
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('upgraded') === 'true' && urlParams.get('session_id')) {
-        setTimeout(() => {
-            fetch('https://quote-genius-server.onrender.com/code-by-session?session_id=' + urlParams.get('session_id') + '&product=foodtruckiq')
-                .then(res => res.json())
-                .then(data => {
-                    if (data.code) {
-                        localStorage.setItem('foodtruckIQPro', 'true');
-                        localStorage.setItem('foodtruckIQCode', data.code);
-                        alert('🎉 Payment successful! Your Pro code: ' + data.code + '\n\nUse this code to unlock Pro features.');
-                    }
-                })
-                .catch(() => {});
-        }, 1000);
+    if (urlParams.get('upgraded') === 'true') {
+        if (urlParams.get('session_id')) {
+            setTimeout(() => {
+                fetch('https://quote-genius-server.onrender.com/code-by-session?session_id=' + urlParams.get('session_id') + '&product=foodtruckiq')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.code) {
+                            localStorage.setItem('foodtruckIQPro', 'true');
+                            localStorage.setItem('foodtruckIQCode', data.code);
+                        }
+                    })
+                    .catch(() => {});
+            }, 1000);
+        } else {
+            localStorage.setItem('foodtruckIQPro', 'true');
+        }
     }
     </script>
 </body>
