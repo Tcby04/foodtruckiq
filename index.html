@@ -401,20 +401,15 @@
     // Check for upgrade success - auto-unlock Pro
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('upgraded') === 'true') {
+        localStorage.setItem('foodtruckIQPro', 'true');
+        
         if (urlParams.get('session_id')) {
-            setTimeout(() => {
-                fetch('https://quote-genius-server.onrender.com/code-by-session?session_id=' + urlParams.get('session_id') + '&product=foodtruckiq')
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.code) {
-                            localStorage.setItem('foodtruckIQPro', 'true');
-                            localStorage.setItem('foodtruckIQCode', data.code);
-                        }
-                    })
-                    .catch(() => {});
-            }, 1000);
-        } else {
-            localStorage.setItem('foodtruckIQPro', 'true');
+            fetch('https://quote-genius-server.onrender.com/code-by-session?session_id=' + urlParams.get('session_id') + '&product=foodtruckiq')
+                .then(res => res.json())
+                .then(data => {
+                    if (data.code) localStorage.setItem('foodtruckIQCode', data.code);
+                })
+                .catch(() => {});
         }
     }
     </script>
